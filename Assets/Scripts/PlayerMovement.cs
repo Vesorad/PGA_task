@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("to fill")]
     [SerializeField] private CharacterController controller;
     [SerializeField] private Transform parentCam;
+    [SerializeField] private GameController gameController;
     [Header("Parameters")]
     [SerializeField] private float speed=6;
     [SerializeField] private float turnSmoothTime = 0.1f;
@@ -15,8 +16,11 @@ public class PlayerMovement : MonoBehaviour
     private float _turnSmoothVelocity;
     void Update()
     {
-        Movement();
-        RotationCam();
+        if (!gameController.isPaused)
+        {
+            Movement();
+            RotationCam();
+        }
     }
 
     private void Movement()
