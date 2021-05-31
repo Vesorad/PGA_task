@@ -18,13 +18,13 @@ public class Door : Objects
             }
         }
     }
-
     public void OpenDoor()
     {
         if (gameController.keyTaken)
         {
             gameObject.SetActive(false);
             gameController.isPaused = true;
+            gameController.GameOver();
         }
     }
 }

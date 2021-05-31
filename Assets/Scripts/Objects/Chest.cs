@@ -13,6 +13,13 @@ public class Chest : Objects
         openChest.SetActive(true);
         gameController.isOpen = true;
     }
+
+    public void CloseChest()
+    {
+        closeChest.SetActive(true);
+        openChest.SetActive(false);
+        gameController.isOpen = false;
+    }
     private  void OnMouseDown()
     {
         if (nearPlayer)

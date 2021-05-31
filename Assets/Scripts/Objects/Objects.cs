@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 public class Objects : MonoBehaviour
 { 
-   [Header("ToFill")]
+   [Header("To Fill")]
    public GameController gameController;
    [SerializeField] private Material material;
    

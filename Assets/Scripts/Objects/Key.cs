@@ -15,7 +15,6 @@ public class Key : Objects
             }
         }
     }
-
     public void TakeKey()
     {
         if (gameController.isOpen)
