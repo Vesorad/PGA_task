@@ -9,33 +9,40 @@ using Random = System.Random;
 
 public class GameController : MonoBehaviour
 {
-   [Header("Panels")]
+   [Header("Decison Panel")]
    [SerializeField] private GameObject decisonPanel;
-   [SerializeField] private GameObject needKeyPanel;
-   [SerializeField] private GameObject startGamePanel;
-   [SerializeField] private GameObject endGamePanel;
-   
-   [Header("Texts")]
    [SerializeField] private Text textInPanelDec;
+   
+   [Header("Start Game Panel")]
+   [SerializeField] private GameObject startGamePanel;
+   [SerializeField] private Text bestTimeStart;
+   
+   [Header("End Game Panel")]
+   [SerializeField] private GameObject endGamePanel;
+   [SerializeField] private Text bestTimeEnd;
+   
+   [Header("In Game Canvas")]
+   [SerializeField] private GameObject needKeyPanel;
    [SerializeField] private Text timer;
    [SerializeField] private Text endGameTimer;
    
    [Header("Objects")]
    [SerializeField] private Transform door;
-   [SerializeField] private Transform player;
    [SerializeField] private GameObject main;
    [SerializeField] private Chest chest;
-   
-   
+   [SerializeField] private Transform player;
+
    [HideInInspector] public bool isPaused=true;
    [HideInInspector] public bool isOpen;
    [HideInInspector] public bool keyTaken;
    [HideInInspector] public bool isDoorOpen;
    private float _time;
    private bool _startTime;
+   
    private void Start()
    {
       isPaused = true;
+      UpdateBestTime();
    }
    private void Update()
    {
@@ -45,6 +52,13 @@ public class GameController : MonoBehaviour
          timer.text = _time.ToString();
       }
    }
+
+   private void UpdateBestTime()
+   {
+      bestTimeStart.text = PlayerPrefs.GetFloat("BestTime",0).ToString();
+      bestTimeEnd.text = PlayerPrefs.GetFloat("BestTime",0).ToString();
+   }
+
    public void ResumeGame()
    {
       isPaused = false;
@@ -71,9 +85,14 @@ public class GameController : MonoBehaviour
 
    public void GameOver()
    {
+      if (_time< PlayerPrefs.GetFloat("BestTime",0))
+      {
+         PlayerPrefs.SetFloat("BestTime", _time);
+      }
       isDoorOpen = true;
       endGamePanel.SetActive(true);
       endGameTimer.text = _time.ToString();
+      UpdateBestTime();
    }
    public void NeedKeyPanel()
    {
