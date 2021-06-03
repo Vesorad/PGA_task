@@ -6,3 +6,8 @@ Assets for Asset Store:
 - 3D Character Dummy
 - Treasure Set - Free Chest
 - Handpainted Keys
+
+Sounds:
+https://opengameart.org/content/door-open-door-close-set
+https://opengameart.org/content/key-jiggle
+https://opengameart.org/content/key-pickup

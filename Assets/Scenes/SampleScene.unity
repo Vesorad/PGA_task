@@ -545,32 +545,10 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 101504738}
-        m_MethodName: OpenDoor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1659188384}
-        m_MethodName: TakeKey
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1715427005}
-        m_MethodName: OpenChest
+      - m_Target: {fileID: 1592140026}
+        m_MethodName: Result
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -943,6 +921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 1592140026}
+  audioManager: {fileID: 1189706068}
   material: {fileID: 2100000, guid: 95fc26d1e1aa35e4f828370a45a6f931, type: 2}
   nearPlayer: 0
 --- !u!65 &101504739
@@ -1069,7 +1048,7 @@ Transform:
   - {fileID: 2094121905}
   - {fileID: 755369008}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &237242463
 GameObject:
@@ -3991,6 +3970,70 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1189706066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1189706069}
+  - component: {fileID: 1189706068}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1189706068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189706066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 319de7cd907db9348b5135be80551374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clip: {fileID: 8300000, guid: 70ae16f82614f85458f694a41f7ddf27, type: 3}
+    soundName: Door
+    loop: 0
+    volume: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d98d357afcf59a445b67e6bdfae4e194, type: 3}
+    soundName: Chest
+    loop: 0
+    volume: 0.5
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 7f2970d250fe6ba4786becad9186f82a, type: 3}
+    soundName: Key
+    loop: 0
+    volume: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 51bc46f199fcfff4680df6e0d4fee087, type: 3}
+    soundName: Main
+    loop: 1
+    volume: 0.1
+    source: {fileID: 0}
+--- !u!4 &1189706069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189706066}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.528191, y: 1.9983181, z: -9.366915}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1224274171
 GameObject:
   m_ObjectHideFlags: 0
@@ -4843,7 +4886,7 @@ Transform:
   m_Children:
   - {fileID: 101504737}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1375371842
 GameObject:
@@ -5047,11 +5090,12 @@ MonoBehaviour:
   timer: {fileID: 1777724979}
   endGameTimer: {fileID: 101796031}
   door: {fileID: 1224274176}
-  main: {fileID: 101504732}
+  main: {fileID: 101504738}
   chest: {fileID: 1715427005}
+  key: {fileID: 1659188384}
   player: {fileID: 2091709904}
   isPaused: 0
-  isOpen: 0
+  isChestOpen: 0
   keyTaken: 0
   isDoorOpen: 0
 --- !u!4 &1592140027
@@ -5066,7 +5110,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1608483500
 GameObject:
@@ -5378,6 +5422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 1592140026}
+  audioManager: {fileID: 1189706068}
   material: {fileID: 2100000, guid: 0275cd71d48a28e4ca8d99d740827a3f, type: 2}
   nearPlayer: 0
 --- !u!64 &1659188385
@@ -5607,10 +5652,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 1592140026}
+  audioManager: {fileID: 1189706068}
   material: {fileID: 2100000, guid: 64ae43b6b6e887545ad0a92b6b491ec8, type: 2}
   nearPlayer: 0
   closeChest: {fileID: 1415557402}
   openChest: {fileID: 820384661}
+  key: {fileID: 1659188382}
 --- !u!4 &1715427006
 Transform:
   m_ObjectHideFlags: 0
@@ -5626,7 +5673,7 @@ Transform:
   - {fileID: 820384664}
   - {fileID: 1659188383}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1728895674
 Mesh:

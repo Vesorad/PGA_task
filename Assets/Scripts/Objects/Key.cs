@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Key : Objects
 {
-
     private  void OnMouseDown()
     {
         if (nearPlayer)
@@ -17,8 +16,9 @@ public class Key : Objects
     }
     public void TakeKey()
     {
-        if (gameController.isOpen)
+        if (gameController.isChestOpen)
         {
+            audioManager.Play("Key");
             gameObject.SetActive(false);
             gameController.keyTaken = true;
         }

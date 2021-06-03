@@ -22,6 +22,7 @@ public class Door : Objects
     {
         if (gameController.keyTaken)
         {
+            audioManager.Play("Door");
             gameObject.SetActive(false);
             gameController.isPaused = true;
             gameController.GameOver();
