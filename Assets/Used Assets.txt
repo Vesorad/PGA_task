@@ -6,6 +6,7 @@ Assets for Asset Store:
 - 3D Character Dummy
 - Treasure Set - Free Chest
 - Handpainted Keys
+- Basic Motions FREE
 
 Sounds:
 https://opengameart.org/content/door-open-door-close-set

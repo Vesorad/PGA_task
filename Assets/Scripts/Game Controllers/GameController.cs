@@ -92,8 +92,8 @@ public class GameController : MonoBehaviour
       _time = 0;
       /////////////////////////START GAME
       Random random = new Random();
-      chest.transform.position = new Vector3(random.Next(1, 19), 1, random.Next(-18, -9));
-      door.transform.position = new Vector3(random.Next(0, 16), 1, random.Next(-9, 0));
+      chest.transform.position = new Vector3(1, 1, random.Next(-19, -1));
+      door.transform.position = new Vector3(20, 1, random.Next(-16, 0));
       _startTime = true;
       startGamePanel.SetActive(false);
       ResumeGame();

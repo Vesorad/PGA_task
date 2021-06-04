@@ -10,7 +10,7 @@ public class Objects : MonoBehaviour
    public GameController gameController;
    public AudioManager audioManager;
    [SerializeField] private Material material;
-   [HideInInspector]public bool nearPlayer;
+   public bool nearPlayer;
    private void OnMouseEnter()
   {
      material.color = Color.gray;
