@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3507257155264281336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3507257155264281338}
+  - component: {fileID: 3507257155264281339}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3507257155264281338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507257155264281336}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 956.02313, y: 530.5988, z: -76.6022}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3507257155264281339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507257155264281336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04a7475a65ed4f4b85f2e1cc1eaf0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decisonPanel: {fileID: 0}
+  textInPanelDec: {fileID: 0}
+  startGamePanel: {fileID: 0}
+  bestTimeStart: {fileID: 0}
+  endGamePanel: {fileID: 0}
+  bestTimeEnd: {fileID: 0}
+  needKeyPanel: {fileID: 0}
+  timer: {fileID: 0}
+  endGameTimer: {fileID: 0}
+  door: {fileID: 0}
+  main: {fileID: 0}
+  chest: {fileID: 0}
+  key: {fileID: 0}
+  player: {fileID: 0}
+  isPaused: 0
+  isChestOpen: 0
+  keyTaken: 0
+  isDoorOpen: 0
